@@ -1,0 +1,2 @@
+# See https://github.com/solsson/kafkacat/commit/c6131fb1422934496423e44419e252196473fa11
+FROM solsson/node-kafkacat@sha256:aa51a23635201191004dbe5ef6eefaf3d4c15728e2072ab88e1aa75525e20f5d
