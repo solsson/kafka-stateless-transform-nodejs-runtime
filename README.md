@@ -44,7 +44,7 @@ We could use a runtime designed for some kind of pubsub, or even [Knative Eventi
 Pardon the parenthesis madness, but there's actually a oneliner with the Node.js CLI to test [a handler](./index.js):
 
 ```
-node -e '(async function() { process.stdout.write(JSON.stringify(await require("./index")({test:true}))); })()'
+node -e '(async function() { process.stdout.write(JSON.stringify(await require("./")({test:true}))); })()'
 # prints {"dummyHandlerGotArg":{"test":true}}
 ```
 
@@ -52,7 +52,7 @@ Ok that's step 3, but how do we do 1 and 2? Kafkacat will easily pipe but with e
 
 ```
 echo '{"test":"file"}' > in.json
-node -e '(async function() { process.stdout.write(JSON.stringify(await require("./index")(require("./in.json")))); })()'
+node -e '(async function() { process.stdout.write(JSON.stringify(await require("./")(require("./in.json")))); })()'
 # prints {"dummyHandlerGotArg":{"test":"file"}}
 ```
 
