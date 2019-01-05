@@ -20,7 +20,7 @@ This signature is actually compatible with for example [Riff](https://github.com
 
 Now let's chose a runtime. For an introduction to the idea of runtimes I higly recommend the recent KubeCon keynote [Kubernetes and the Path to Serverless](https://www.youtube.com/watch?v=oNa3xK2GFKY). The handler there reads from stdin and writes to stdout but with Node.js it's a bit easier to export a function, plus it's more likely compatible with runtimes you'll want in Knative where user containers are servers on port 8080.
 
-As the keynote so nicely describes, Kubernetes isn't great for composition at runtime (Pods need containers that talk HTTP or gRPC, and your business logic probably doesn't compile to such images) so let's instead specify that our business logic is combined with the runtime in a build step. Expressed as Dockerfile syntax:
+As the keynote so nicely describes, Kubernetes doesn't offer much flexibility for composition at runtime. Basically containers in pods need to use the network for talking to each other. Often a focus on business logic means not having to deal with networks, so let's instead specify that our business logic is combined with the runtime in a build step. Expressed as Dockerfile syntax:
 
 ```
 FROM node as my-build
