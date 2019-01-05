@@ -1,5 +1,5 @@
 {
-  "name": "kafka-stateless-transform-nodejs-runtime",
+  "name": "a-stateless-transform-nodejs",
   "version": "1.0.0",
   "description": "Example function that adheres to the spec for our message transform example",
   "main": "index.js",
