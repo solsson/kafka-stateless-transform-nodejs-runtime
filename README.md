@@ -45,7 +45,7 @@ Pardon the parenthesis madness, but there's actually a oneliner with the Node.js
 
 ```
 node -e '(async function() { process.stdout.write(JSON.stringify(await require("./")({test:true}))); })()'
-# prints [{"dummyHandlerGotArg":{"test":true}}]
+# prints [{"n":0,"t":"2019-01-05T15:15:15.700Z","arg":{"test":true}}]
 ```
 
 Ok that's step 3, but how do we do 1 and 2? Kafkacat will easily pipe but with even less code you can read the JSON from a file:
@@ -53,7 +53,6 @@ Ok that's step 3, but how do we do 1 and 2? Kafkacat will easily pipe but with e
 ```
 echo '{"test":"file"}' > in.json
 node -e '(async function() { process.stdout.write(JSON.stringify(await require("./")(require("./in.json")))); })()'
-# prints [{"dummyHandlerGotArg":{"test":"file"}}]
 ```
 
 Kafkacat will read the next message to a file and then exit, like this:
