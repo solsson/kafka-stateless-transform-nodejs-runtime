@@ -4,6 +4,6 @@
  */
 
 module.exports = async function(arg) {
-  // You can await stuff here or simply: return { dummyHandlerGotArg: arg };
-  return new Promise((resolve, reject) => setTimeout(() => resolve({ dummyHandlerGotArg: arg }), 100))
+  // You can await stuff here or simply: return [{ dummyHandlerGotArg: arg }];
+  return new Promise((resolve, reject) => setTimeout(() => resolve([{ dummyHandlerGotArg: arg }]), 100))
 }
