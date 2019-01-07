@@ -62,3 +62,5 @@ kafkacat -b kafka:9092 -C -t source-json -c 1 -e > in.json
 ```
 
 Guarantees however require more elaborate consumption.
+
+... but before I got any further on this hack, we did a semi-hack that is more performant (though less guaranteed) over at [Yolean/kafka-transform-nodejs-runtime](https://github.com/Yolean/kafka-transform-nodejs-runtime). See ya.
